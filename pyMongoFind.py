@@ -2,7 +2,7 @@ import pymongo
 import pymongo as pyM
 import pprint
 
-client = pyM.MongoClient("<cole aqui o link do seu banco de dados mongoDB do atlas")
+client = pyM.MongoClient("mongodb+srv://gael:fliffi10@testebd.04ubfdh.mongodb.net/?retryWrites=true&w=majority")
 db = client.test
 posts = db.posts
 
@@ -29,6 +29,11 @@ for collection in collections:
     print(collection)
 
 
+print("Excluindo uma informação")
+posts.delete_one({"author": "Belinha"})
+
+# client.drop_database('test')     Isso irá excluir o banco de dados chamado test
+# print(db.list_collection_names())   Isso mostra que não tem mais nenhuma coleção no banco
 """""
 print("\nverificando por author")
 pprint.pprint(db.posts.find_one({"author": "Belinha"}))
