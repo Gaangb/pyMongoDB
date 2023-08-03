@@ -2,7 +2,7 @@ import pymongo
 import pymongo as pyM
 import pprint
 
-client = pyM.MongoClient("mongodb+srv://gael:fliffi10@testebd.04ubfdh.mongodb.net/?retryWrites=true&w=majority")
+client = pyM.MongoClient("<cole aqui seu link do banco de dados mongodb do atlas>")
 db = client.test
 posts = db.posts
 
